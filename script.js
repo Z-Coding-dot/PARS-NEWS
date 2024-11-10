@@ -1,6 +1,4 @@
 //          Json file...
-            
-
 const jsonData = {
         "articles": [
           {
@@ -115,28 +113,91 @@ const jsonData = {
 
 };
 
-async function fetchArticles() {
-    try {
-        const articles = jsonData.articles; // Use the local JSON data
-        displayArticles(articles);
-        displayMostPopular(articles);
+function fetchArticles() {
+  try {
+      const articles = jsonData.articles; // Use the local JSON data
+      displayArticles(articles);
+      displayMostPopular(articles);
+      
+      // Sorting and filtering functionality
+      document.getElementById('sort-select').addEventListener('change', (event) => {
+          const sortBy = event.target.value;
+          let sortedArticles;
 
-        // Sorting functionality
-        document.getElementById('sort-select').addEventListener('change', (event) => {
-            const sortBy = event.target.value;
-            const sortedArticles = [...articles].sort((a, b) => {
-                if (sortBy === 'popularity') {
-                    return b.views - a.views;
-                } else if (sortBy === 'date') {
-                    return new Date(b.date) - new Date(a.date);
-                }
-                return 0;
-            });
-            displayArticles(sortedArticles);
-        });
-    } catch (error) {
-        console.error("Unable to fetch articles:", error);
-    }
+          switch (sortBy) {
+              case 'popularity':
+                  // Sort by popularity
+                  sortedArticles = [...articles].sort((a, b) => b.views - a.views);
+                  break;
+                  
+              case 'date':
+                  // Sort by date
+                  sortedArticles = [...articles].sort((a, b) => new Date(b.date) - new Date(a.date));
+                  break;
+                  
+              case 'health':
+                  // Filter health articles
+                  sortedArticles = articles.filter(article => article.category.toLowerCase() === 'health');
+                  break;
+                  
+              case 'technology':
+                  // Filter technology articles
+                  sortedArticles = articles.filter(article => article.category.toLowerCase() === 'technology');
+                  break;
+                  
+              case 'arts':
+                  // Filter arts articles
+                  sortedArticles = articles.filter(article => article.category.toLowerCase() === 'arts');
+                  break;
+                  
+              case 'finance':
+                  // Filter finance articles
+                  sortedArticles = articles.filter(article => article.category.toLowerCase() === 'finance');
+                  break;
+                  
+              case 'environment':
+                  // Filter environment articles
+                  sortedArticles = articles.filter(article => article.category.toLowerCase() === 'environment');
+                  break;
+                  
+              case 'travel':
+                  // Filter travel articles
+                  sortedArticles = articles.filter(article => article.category.toLowerCase() === 'travel');
+                  break;
+                  
+              case 'society':
+                  // Filter society articles
+                  sortedArticles = articles.filter(article => article.category.toLowerCase() === 'society');
+                  break;
+              case 'automotive':
+                  // Filter automotive articles
+                  sortedArticles = articles.filter(article => article.category.toLowerCase() === 'automotive');
+                  break;                
+              case 'blank':
+              default:
+                 // Show all articles
+                  sortedArticles = articles;
+                  break;
+          }
+          // Display the filtered/sorted articles
+          displayArticles(sortedArticles);         
+          // If no articles found in the category
+          if (sortedArticles.length === 0 && sortBy !== 'blank') {
+              const noArticlesMessage = document.createElement('div');
+              noArticlesMessage.className = 'alert alert-info text-center m-3';
+              noArticlesMessage.textContent = `No articles found in the ${sortBy} category.`;
+              document.getElementById('articles-container').appendChild(noArticlesMessage);
+          }
+      });
+
+  } catch (error) {
+      console.error("Unable to fetch articles:", error);
+      // Display error message to user
+      const errorMessage = document.createElement('div');
+      errorMessage.className = 'alert alert-danger text-center m-3';
+      errorMessage.textContent = 'Sorry, we encountered an error while loading the articles.';
+      document.getElementById('articles-container').appendChild(errorMessage);
+  }
 }
 
 function displayArticles(articles) {

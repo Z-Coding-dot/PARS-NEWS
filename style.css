@@ -11,6 +11,17 @@ body {
 #search-input {
     max-width: 90%;
 }
+.btn-circle {
+    width: 45px;
+    height: 40px;
+    border-radius: 50%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
 .header{
     background-color: #007587;
     height:auto;

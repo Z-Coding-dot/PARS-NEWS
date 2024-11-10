@@ -9,47 +9,45 @@
 </head>
 <body>
 <header class="header text-white">
-
                                <!-- Logo Section  -->
-
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light ms-xl-5">
         <a class="navbar-brand text-light fw-4" href="#">PARS NEWS</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon "></span>
         </button>
-
                             <!-- Search Section  -->
-
-        <div class="collapse navbar-collapse flex-column flex-xl-row align-items-lg-center " id="navbarNav">
+        <div class="collapse navbar-collapse flex-column flex-xl-row align-items-lg-center ms-xl-5 me-xl-5" id="navbarNav">
             <div class="input-group align-items-center w-80 my-2 w-lg-100 mb-3 mt-3">
                 <input id="search-input" class="form-control" type="search" placeholder="Search articles" aria-label="Search">
                 <button id="search-button" class="btn btn-outline-light" type="button">🔍</button>
             </div>
-
-
                                     <!-- Sorting Articles Section  -->
-
-            <div class="d-flex flex-column flex-lg-row align-items-lg-center w-95 w-lg-auto">
-                <select id="sort-select" class="form-select mb-2 mb-lg-0 w-100 w-lg-auto mr-4 ">
+            <div class="d-flex flex-column flex-lg-row align-items-lg-center w-100 w-lg-auto">
+                <select id="sort-select" class="form-select mb-2 mb-lg-0 w-100 w-lg-auto me-xl-5">
+                    <option value="#" disabled selected class="text-muted">Select to Sort By Name.</option>
                     <option value="blank">All</option>
                     <option value="popularity">Popularity</option>
                     <option value="date">Date</option>
+                    <option value="health">Health</option>
+                    <option value="technology">Technology</option>
+                    <option value="arts">Arts</option>
+                    <option value="finance">Finance</option>
+                    <option value="environment">Environment</option>
+                    <option value="travel">Travel</option>
+                    <option value="society">Society</option>
+                    <option value="automotive">Automotive</option>
                 </select>
-                <button id="dark-mode-toggle" class="btn ms-lg-2 mt-2 mt-lg-0 fs-4 btn-outline-light">🌓</button>
+                <button id="dark-mode-toggle" class="btn btn-circle mt-lg-0 fs-4 btn-outline-light">🌓</button>          
             </div>
         </div>
     </nav>
 </header>
-
                                 <!-- Popular Articles Section  -->
-
 <div class="container mt-4">
-    <h2 id="popular-title" class="mb-4 " style="display: none;">Most Popular Article: <span id="popular-article"></span></h2>    
+    <h2 id="popular-title" class="mb-5" style="display: none;">Most Popular Article: <span id="popular-article"></span></h2>    
     <div id="articles" class="row" aria-live="polite"></div>
 </div>
-
                                     <!-- footer section  -->
-
 <footer footer class="text-center p-3 text-white mt-4">
     <div>
         <h3>Contact with Me</h3>
