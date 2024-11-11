@@ -150,9 +150,9 @@ function fetchArticles() {
             );
 
             // Increase views for articles when sorting by date
-            sortedArticles.forEach((article) => {
-              article.views += 1;
-            });
+            // sortedArticles.forEach((article) => {
+            //   article.views += 1;
+            // });
             break;
 
           case "health":
@@ -237,6 +237,14 @@ function fetchArticles() {
     document.getElementById("articles-container").appendChild(errorMessage);
   }
 }
+// Add this new function
+function incrementViews(articleId) {
+  const article = jsonData.articles.find((a) => a.id === articleId);
+  if (article) {
+    article.views += 1;
+    displayArticles(jsonData.articles); // Re-render articles to reflect updated views count
+  }
+}
 
 function displayArticles(articles) {
   const articlesContainer = document.getElementById("articles");
@@ -257,7 +265,9 @@ function displayArticles(articles) {
                     <p class="card-text text-secondary">Views: ${
                       article.views
                     } | Reading Time: ${readingTime} min</p>
-                    <a href="https://jamanetwork.com/journals/jama/fullarticle/184519" class="btn btn-info">Read More</a>
+                    <a href="https://jamanetwork.com/journals/jama/fullarticle/184519" 
+                       class="btn btn-info" 
+                       onclick="incrementViews(${article.id})">Read More</a>
                 </div>
             </div>
         `;
