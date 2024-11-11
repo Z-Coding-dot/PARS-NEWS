@@ -1,87 +1,86 @@
-
 body {
-    background-color: #f8f9fa; 
-    transition: background-color 0.3s, color 0.3s;
+  background-color: #f8f9fa;
+  transition: background-color 0.3s, color 0.3s;
 }
 .navbar-brand {
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin-left: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-left: 10px;
 }
 #search-input {
-    max-width: 90%;
+  max-width: 90%;
 }
 .btn-circle {
-    width: 45px;
-    height: 40px;
-    border-radius: 50%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
+  width: 45px;
+  height: 40px;
+  border-radius: 50%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
-.header{
-    background-color: #007587;
-    height:auto;
-    padding: 20px;
+.header {
+  background-color: #007587;
+  height: auto;
+  padding: 20px;
 }
-    body.dark-mode .header{
-    background-color: #262a2e;}
-       
+body.dark-mode .header {
+  background-color: #262a2e;
+}
+
 .navbar-nav .nav-item {
-    margin-bottom: 5px; /* Adds spacing between items in vertical mode */
+  margin-bottom: 5px; /* Adds spacing between items in vertical mode */
 }
 
 h2 {
-    color: #0f0f0f;
-    font-weight: bold; /* Bootstrap primary color */
-    box-shadow: none;
+  color: #0f0f0f;
+  font-weight: bold; /* Bootstrap primary color */
+  box-shadow: none;
 }
-.navbar-toggler{
-    outline: none;
-    background-color: #f8f9fa;
+.navbar-toggler {
+  outline: none;
+  background-color: #f8f9fa;
 }
 .card {
-    margin-bottom: 20px; /* Space between cards */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for cards */
-    cursor: pointer;
-    transition:0.4s;
-    box-shadow: 0 0 8px #1dc6fa;
+  margin-bottom: 20px; /* Space between cards */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for cards */
+  cursor: pointer;
+  transition: 0.4s;
+  box-shadow: 0 0 8px #1dc6fa;
 }
-.card:hover{
-    box-shadow: 0 0 10px, 0 0 15px #00ffff, 0 0 20px #00ffff;
+.card:hover {
+  box-shadow: 0 0 10px, 0 0 15px #00ffff, 0 0 20px #00ffff;
 }
 
 footer {
-    background-color: #007587; /* Dark footer background */
-    color: white; /* White text for footer */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for footer */
+  background-color: #007587; /* Dark footer background */
+  color: white; /* White text for footer */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for footer */
 }
-
 
 /* Dark mode styles */
 body.dark-mode {
-    background-color: #212529; /* Dark background */
-    color: white; /* White text */
+  background-color: #212529; /* Dark background */
+  color: white; /* White text */
 }
 
 body.dark-mode h2 {
-    color: #00ffff;
-    box-shadow: none; /* Lighter color for headings in dark mode */
+  color: #00ffff;
+  box-shadow: none; /* Lighter color for headings in dark mode */
 }
 
- body.dark-mode .card {
-    background-color: #212529; /* Dark background for cards */
-    color: white; /* White text for cards */
-    box-shadow: 0 0 10px #737171;
+body.dark-mode .card {
+  background-color: #212529; /* Dark background for cards */
+  color: white; /* White text for cards */
+  box-shadow: 0 0 10px #737171;
 }
-body.dark-mode .card:hover{
-    box-shadow: 0 0 10px #737171, 0 0 15px #737171,0 0 20px #737171;
-    transition:0.3s;
+body.dark-mode .card:hover {
+  box-shadow: 0 0 10px #737171, 0 0 15px #737171, 0 0 20px #737171;
+  transition: 0.3s;
 }
 
 body.dark-mode footer {
-    background-color: #343333;; /* Darker footer background */
+  background-color: #343333; /* Darker footer background */
 }
